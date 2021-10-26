@@ -14,6 +14,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 const HTTP_PORT = process.env.PORT || 8080;
@@ -82,10 +83,15 @@ app.get('/htmlDemo', (req, res) => {
     res.sendFile(path.join(__dirname, '/views/htmlDemo.html'));
 })
 
+// Add Student Page
+app.get('/students/add',(req,res)=>{
+    res.sendFile(path.join(__dirname, '/views/addStudent.html'));
+})
+
 // 404 custom page if route not found
-app.use((req,res,next)=>{
+app.use((req, res, next) => {
     // res.status(404).send("404: Page Not Found");
-    res.status(404).sendFile(path.join(__dirname,'/public/404.png'));
+    res.status(404).sendFile(path.join(__dirname, '/public/404.png'));
 })
 
 
