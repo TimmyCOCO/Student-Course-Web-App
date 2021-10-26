@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&display=swap');
+
+
+
+body {
+    background: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ8NDQ0NFREWFhURFRUYHSggGBoxGxMVITEhMSkrLi4uFx8zODMtNygtLisBCgoKDQ0NDw0NDjMZFRkrLTcrNzErLDctKzctLS0rKy0tKysrKystLS0tLSsrKystLSsrLSsrKysrKysrKysrK//AABEIALEBHAMBIgACEQEDEQH/xAAaAAEBAQEBAQEAAAAAAAAAAAABAgADBAUH/8QAIBABAQEBAAICAgMAAAAAAAAAAAERAmGRAxNx8BQxUf/EABgBAQEBAQEAAAAAAAAAAAAAAAIBAAME/8QAHREBAQEBAAIDAQAAAAAAAAAAAAERAhJRAzFSQf/aAAwDAQACEQMRAD8A/R4qAx6XlioqJi4NOKi4mKgmuLiIuIqoqJiojKhBZGTVJqjU1NVU0o51FTVVNOOdSCCFmBZCYDEWKhgiohQwwRQkzMzMAoMlTQqxJBQDYFF44YxgvVIYuJi4NOQxcTFwSkVFxMVEVUVBDEZTMzJWFIpQaipqqilHOpqaqopxyoFYEFYwGMxiomKiFFRUEVBpQnGkOCeNjHGZsSFisliLE1aaQWJGKCjjxloYL1QxcTFQacVFxMVEJUVExcFVQwQshIZkrCsKUCpqaamlHOpqKqppxyoSaCCsqJMZlxUTFwacVFyJkXBpyGHGkVgngY4yLiRVCqNRQqppBUhVCg8cMaGC9UMVBFRDhi4mKgkqGCGIyoQWYsGYawrClAqammppRzqamqqaccqmg1iBlRKozRUdIiOnIV0iouCLgV0hhaETGMRWYVNVU0hqamqqaoUBqCCvMYxF6Y0VBFQSioYIpDMIhRVMCyMzBkrCsKUCipqqmlHOpqaoE52JYsQYFSNFSI2GOkRFxKcXFxEXArpFQph0TIbU2qlapptTaoWipptRaUCkDRqhXIsReloqCKiHDDGIlGLMilmZlZgzIwIUKKmqBBYkKwYQWJxsU2KGCRUYxkwxUEMQouKlc9OoUrprajW1MXVaLU6LVxLTam0WptXAtNqbWtTaWBadCbRq4OqLFzemNFNChxizCcLMyEzMzKzBmRmZmShsLFAsS2KwKFgxjjKNgJZRZgWY62p0ayavRqdTq4mr0Wo0Wriaq0Wp0Wrg2m0WptFpYFp1tRrauDr0li4vXKygRpysWZHSMzATjMwZSwZFLMyoxZmGxmwnCCxONisbFCxIVgUaKDU0gotFrVNUbWtFotTaUgWm0am0auDqtGp0auDqrRqbRauDadbU6NXB19EguD2ykiEacrMzC6QMwR0jMAhQlJQiUmMioYIqMlYtCoVsGKxsIKnE1dTVgVFTV1FKOdRU1VRTjnU2otVUU450WjWtTVG06NGjVwdOjRo1cG06NA0sHX1ikvK9sqimFDlIYC6ysGoo11jaNbRqHCydOoSoqIiozLiomKjDVRQioo1sYso1KaupqxzrnUVfSOjjnXOuddOnPp0jjUVFXUU451NTTU0grDWqao2sGFULW1tGhR19ghnle6KjAocYEUXXkUU1NGusFBSLpCUlDVFRMVGZcXERcYVxUTFRRpY4zDU1NXYilAqOnPp06c+jjl051z6dOnPp0jj051FXUU45VFTVU/V1+0tkHLfqOaXW/D149i/D149t5T2N469OVDr9PXj2m/B149wvKexvHX5cw6/R149xv4/f+T3G8p7Hw6/L6hjM8z2RizI6RhWYa68iprMLrBQzI6QFmE1RUZmZcXyzMNXFxmUaY1LKNSmsywK59OdLHHHpy6c+mZ0jl051FZjjlUV65/U/EZh+T+Onw/dZmZydwGZRYMzM/9k=') no-repeat center center fixed;
+    background-size: cover;
+}
+
+nav {
+    background: linear-gradient(to bottom, #003449, #27ced8);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+
+.navbar-brand {
+    font-family: 'Permanent Marker', cursive;
+    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+    color: #e09b9a;
+    font-size: 30px;
+}
+
+a.nav-link {
+    font-size: 20px;
+    font-family: 'Courgette', cursive;
+    color: #e1ffe7;
+}
+
+a.nav-link:hover {
+    font-size: 30px;
+    color: white;
+}
+
+h1 {
+    font-family: 'Cardo', serif;
+    text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0, 0, 0, 0.15);
+    color: #4f0004;
+}
+
+header,
+h4 {
+    font-family: 'Rampart One', cursive;
+    text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+}
+
+section a {
+    color: #e0931f;
+}
+
+section a:hover {
+    text-decoration: none;
+    color: #0b7bf4;
+}
+
+.table {
+    font-size: 25px;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 10px;
+}
+
+.bgcolor tr:nth-child(odd) {
+    background-color: lightgrey
+}
+
+.bgcolor tr:hover {
+    background-color: #caeffe;
+    font-weight: bold;
+}
+
+button {
+    border-radius: 12px;
+    background-color: transparent;
+    border: none;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+button:hover {
+    background: #497565;
+}
