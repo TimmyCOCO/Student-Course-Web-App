@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Fruktur&display=swap');
 
 
 body {
@@ -73,17 +73,29 @@ td {
     font-weight: bold;
 }
 
-button {
-    border-radius: 12px;
-    background-color: transparent;
+
+legend {
+    font-family: 'Cardo', serif;
+    font-family: 'Fruktur', cursive;
+    color: #006699;
+    text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0, 0, 0, 0.15);
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.btn {
+    border-radius: 20px;
     border: none;
+    background-color: darkgreen;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
-button:hover {
-    background: #497565;
+.btn:hover {
+    font-weight: bold;
+    background-color: yellowgreen;
 }
 
-legend {
-    font-size: 50px;
+label {
+    font-size: 17px;
+    font-weight: bold;
 }
