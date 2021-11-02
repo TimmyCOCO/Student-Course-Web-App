@@ -83,3 +83,7 @@ button {
 button:hover {
     background: #497565;
 }
+
+legend {
+    font-size: 50px;
+}

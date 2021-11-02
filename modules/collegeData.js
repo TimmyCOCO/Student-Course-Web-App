@@ -96,3 +96,19 @@ module.exports.getStudentByNum = function (num) {
         }
     })
 }
+
+
+// add student 
+module.exports.addStudent = function (studentData) {
+    return new Promise((resolve, reject) => {
+        if (studentData) {
+            studentData.studentNum = students.length + 1;
+            studentData.TA = (studentData.TA) ? true : false;
+            students.push(studentData);
+            resolve();
+        } else {
+            reject();
+            return;
+        }
+    })
+}

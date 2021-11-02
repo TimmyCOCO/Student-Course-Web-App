@@ -84,8 +84,15 @@ app.get('/htmlDemo', (req, res) => {
 })
 
 // Add Student Page
-app.get('/students/add',(req,res)=>{
+app.get('/students/add/',(req,res)=>{
     res.sendFile(path.join(__dirname, '/views/addStudent.html'));
+})
+
+
+app.post('/processForm',(req,res)=>{
+    collegeData.addStudent(req.body).then(()=>{
+        res.redirect("/students")
+    })
 })
 
 // 404 custom page if route not found
