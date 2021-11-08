@@ -21,6 +21,23 @@ const exphbs = require('express-handlebars');
 app.engine('.hbs', exphbs({
     extname: '.hbs',
     layout: 'main',
+    helpers: {
+        navLink: function (url, options) {
+            return '<li' +
+                ((url == app.locals.activeRoute) ? ' class="nav-item active" ' : ' class="nav-item" ') +
+                '><a class="nav-link" href="' + url + '">' + options.fn(this) + '</a></li>';
+        },
+
+        equal: function (lvalue, rvalue, options) {
+            if (arguments.length < 3)
+                throw new Error("Handlebars Helper equal needs 2 parameters");
+            if (lvalue != rvalue) {
+                return options.inverse(this);
+            } else {
+                return options.fn(this);
+            }
+        }
+    }
 }));
 
 app.set('view engine', '.hbs');
@@ -28,6 +45,13 @@ app.set('view engine', '.hbs');
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
+
+// fix navigation bar
+app.use(function (req, res, next) {
+    let route = req.baseUrl + req.path;
+    app.locals.activeRoute = (route == '/') ? '/' : route.replace(/\/$/, '');
+    next();
+});
 
 const HTTP_PORT = process.env.PORT || 8080;
 
@@ -70,14 +94,14 @@ app.get('/courses', (req, res) => {
     })
 })
 
-// Get all TAs
-app.get('/tas', (req, res) => {
-    collegeData.getTAs().then(data => {
-        res.json(data);
-    }).catch(err => {
-        res.status(500).json({ message: "no results" });
-    })
-})
+// Get all TAs, remove now
+// app.get('/tas', (req, res) => {
+//     collegeData.getTAs().then(data => {
+//         res.json(data);
+//     }).catch(err => {
+//         res.status(500).json({ message: "no results" });
+//     })
+// })
 
 
 // Home Page
@@ -99,14 +123,14 @@ app.get('/htmlDemo', (req, res) => {
 })
 
 // Add Student Page
-app.get('/students/add/',(req,res)=>{
+app.get('/students/add/', (req, res) => {
     // res.sendFile(path.join(__dirname, '/views/addStudent.html'));
     res.render('addStudent');
 })
 
 
-app.post('/processForm',(req,res)=>{
-    collegeData.addStudent(req.body).then(()=>{
+app.post('/processForm', (req, res) => {
+    collegeData.addStudent(req.body).then(() => {
         res.redirect("/students")
     })
 })

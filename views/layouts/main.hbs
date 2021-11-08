@@ -19,14 +19,21 @@
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+				{{!-- 
+                <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
 				<li class="nav-item"><a class="nav-link" href="/about">About</a></li>
 				<li class="nav-item"><a class="nav-link" href="/htmlDemo">Html Demo</a></li>
-				<li class="nav-item"><a class="nav-link" href="/students/add">Add Students</a></li>
+				<li class="nav-item"><a class="nav-link" href="/students/add">Add Students</a></li> 
+                --}}
+                {{#navLink "/"}}Home{{/navLink}}
+                {{#navLink "/about"}}About{{/navLink}}
+                {{#navLink "/htmlDemo"}}Html Demo{{/navLink}}
+                {{#navLink "/students/add"}}Add Students{{/navLink}}
+
 			</ul>
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item"><a class="nav-link" href="/students">Students</a></li>
-				<li class="nav-item"><a class="nav-link" href="/tas">Teaching Assistants</a></li>
+				{{!-- <li class="nav-item"><a class="nav-link" href="/tas">Teaching Assistants</a></li> --}}
 				<li class="nav-item"><a class="nav-link" href="/courses">Courses</a></li>
 			</ul>
 		</div>
