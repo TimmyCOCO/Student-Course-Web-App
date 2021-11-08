@@ -18,13 +18,12 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 
 // configure handlebars
-app.engine = ('.hbs', exphbs({
+app.engine('.hbs', exphbs({
     extname: '.hbs',
     layout: 'main',
-
 }));
 
-app.set('view engine','.hbs');
+app.set('view engine', '.hbs');
 
 
 app.use(express.static('public'));
@@ -83,22 +82,26 @@ app.get('/tas', (req, res) => {
 
 // Home Page
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/home.html'));
+    // res.sendFile(path.join(__dirname, '/views/home.html'));
+    res.render('home');
 })
 
 // About Page
 app.get('/about', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/about.html'));
+    // res.sendFile(path.join(__dirname, '/views/about.html'));
+    res.render('about');
 })
 
 // htmlDemo Page
 app.get('/htmlDemo', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/htmlDemo.html'));
+    // res.sendFile(path.join(__dirname, '/views/htmlDemo.html'));
+    res.render('htmlDemo');
 })
 
 // Add Student Page
 app.get('/students/add/',(req,res)=>{
-    res.sendFile(path.join(__dirname, '/views/addStudent.html'));
+    // res.sendFile(path.join(__dirname, '/views/addStudent.html'));
+    res.render('addStudent');
 })
 
 
