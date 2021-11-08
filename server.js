@@ -1,10 +1,10 @@
 /*********************************************************************************
-* WEB700 – Assignment 04
+* WEB700 – Assignment 05
 * I declare that this assignment is my own work in accordance with Seneca Academic Policy. No part
 * of this assignment has been copied manually or electronically from any other source
 * (including 3rd party web sites) or distributed to other students.
 *
-* Name: Ziming Tan   Student ID: 106915218  Date: 2021-11-01
+* Name: Ziming Tan   Student ID: 106915218  Date: 2021-11-08
 *
 * Online (Heroku) Link: https://limitless-stream-49000.herokuapp.com/
 *
@@ -13,6 +13,19 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+
+// handlebars module
+const exphbs = require('express-handlebars');
+
+// configure handlebars
+app.engine = ('.hbs', exphbs({
+    extname: '.hbs',
+    layout: 'main',
+
+}));
+
+app.set('view engine','.hbs');
+
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
