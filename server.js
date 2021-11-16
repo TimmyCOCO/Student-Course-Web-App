@@ -62,35 +62,75 @@ const collegeData = require("./modules/collegeData");
 app.get('/students', (req, res) => {
     // if have parameter, then Get some students via course number
     if (req.query.course) {
-        collegeData.getStudentsByCourse(req.query.course).then(studentsByCourseNum => {
-            res.json(studentsByCourseNum);
+        collegeData.getStudentsByCourse(req.query.course).then(data => {
+            //res.json(data);
+            res.render("students", {
+                students: data
+            });
+
         }).catch(err => {
-            res.status(500).json({ message: "no results" });
-        })
+            // res.status(500).json({ message: "no results" });
+            res.render("students", {
+                message: "no results"
+            });
+
+        });
     } else { // if don't have paramter, then Get all students
         collegeData.getAllStudents().then(data => {
-            res.json(data);
-        }).catch(err => {
-            res.status(500).json({ message: "no results" });
-        })
+            // res.json(data);    
+            res.render("students", {
+                students: data
+            });
+
+        }).catch(() => {
+            // res.status(500).json({ message: "no results" });
+            res.render("students", {
+                message: "no results"
+            });
+        });
     }
 })
+
 
 // Get a student via student number
 app.get('/student/:num', (req, res) => {
     collegeData.getStudentByNum(req.params.num).then(studentByNum => {
-        res.json(studentByNum)
+        // res.json(studentByNum);
+        res.render('student', {
+            student: studentByNum
+        });
     }).catch(err => {
-        res.status(500).json({ message: "no result" })
-    })
+        //res.status(500).json({ message: "no result" });
+        res.render('student', {
+            message: "no results"
+        });
+    });
 })
 
 // Get all courses
 app.get('/courses', (req, res) => {
     collegeData.getCourses().then(data => {
-        res.json(data);
-    }).catch(err => {
-        res.status(500).json({ message: "no results" });
+        // res.json(data);
+        res.render("courses", {
+            course: data
+        });
+
+    }).catch(() => {
+        // res.status(500).json({ message: "no results" });
+        res.render('courses', {
+            message: "no results"
+        });
+    });
+})
+
+// Get course by courseId
+app.get('/course/:id', (req, res) => {
+    collegeData.getCourseById(req.params.id).then(data => {
+        res.render("course", {
+            course: data
+        });
+    }).catch(err =>{
+        
     })
 })
 
@@ -128,14 +168,23 @@ app.get('/students/add/', (req, res) => {
     res.render('addStudent');
 })
 
+// Update Student
+app.post('/student/update', (req, res) => {
+    //console.log(req.body);
+    collegeData.updateStudent(req.body).then(() => {
+        res.redirect("/students");
+    })
+})
 
+
+// Process the form, will not show up
 app.post('/processForm', (req, res) => {
     collegeData.addStudent(req.body).then(() => {
         res.redirect("/students")
     })
 })
 
-// 404 custom page if route not found
+// display 404 custom page if route not found
 app.use((req, res, next) => {
     // res.status(404).send("404: Page Not Found");
     res.status(404).sendFile(path.join(__dirname, '/public/404.png'));

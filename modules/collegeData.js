@@ -67,7 +67,23 @@ module.exports.getCourses = function () {
     });
 }
 
-// provide an array of "student" objects matches course number
+// provide the "course" objects matches course id
+module.exports.getCourseById = function(id){
+    return new Promise((resolve, reject)=>{
+        if(courses.length > 0){
+            for(let i =0; i<courses.length; i++){
+                if(courses[i].courseId == id){
+                    resolve(courses[i]);
+                }
+            }
+        }else{
+            reject("query returned 0 results");
+            return;
+        }
+    })
+}
+
+// provide an array of "student" objects matches course id
 module.exports.getStudentsByCourse = function (course) {
     return new Promise((resolve, reject) => {
         let studentsList = [];
@@ -110,5 +126,19 @@ module.exports.addStudent = function (studentData) {
             reject();
             return;
         }
+    })
+}
+
+// update student
+module.exports.updateStudent= function(studentData){
+    return new Promise((resolve,reject)=>{
+        for(let i=0; i<students.length; i++){
+            if(studentData.studentNum == students[i].studentNum){
+                students[i] = studentData;
+                students[i].TA = (studentData.TA) ? true : false;
+            }
+        }
+        resolve();
+
     })
 }
