@@ -3,7 +3,14 @@
         <br>
         <h2>{{course.courseDescription}}</h2>
         <hr />
-        <form>
+
+        {{#unless course}}
+            <div class="col-md-12 text-center">
+                <strong>{{message}}</strong>
+            </div>
+        {{/unless}}
+        
+        <form>    
             <div class="row">
                 <div class="col-md-3">
                     <div class="form-group">

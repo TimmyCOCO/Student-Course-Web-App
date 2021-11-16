@@ -131,7 +131,7 @@ app.get('/course/:id', (req, res) => {
             course: data
         });
     }).catch(err => {
-
+        res.json({message: err});
     })
 })
 
