@@ -30,7 +30,9 @@ module.exports.getAllStudents = function () {
     return new Promise((resolve, reject) => {
         if (students.length > 0) {
             resolve(students);
-        } else {
+        }
+
+        if (students.length == 0) {
             reject("no results returned");
             return;
         }
@@ -41,26 +43,34 @@ module.exports.getAllStudents = function () {
 module.exports.getTAs = function () {
     return new Promise((resolve, reject) => {
         let TAsList = [];
+
         if (students.length > 0) {
             for (let i = 0; i < students.length; i++) {
                 if (students[i].TA == true) {
                     TAsList.push(students[i])
                 }
             }
-            resolve(TAsList);
-        } else {
+        }
+
+        if (students.length == 0) {
             reject("no results returned");
             return;
         }
-    });
+
+        resolve(TAsList);
+    }
+    )
 }
+
 
 // provide the full array of "course" objects
 module.exports.getCourses = function () {
     return new Promise((resolve, reject) => {
         if (courses.length > 0) {
             resolve(courses);
-        } else {
+        }
+
+        if (courses.length == 0) {
             reject("no results returned");
             return;
         }
@@ -68,15 +78,17 @@ module.exports.getCourses = function () {
 }
 
 // provide the "course" objects matches course id
-module.exports.getCourseById = function(id){
-    return new Promise((resolve, reject)=>{
-        if(courses.length > 0){
-            for(let i =0; i<courses.length; i++){
-                if(courses[i].courseId == id){
+module.exports.getCourseById = function (id) {
+    return new Promise((resolve, reject) => {
+        if (courses.length > 0) {
+            for (let i = 0; i < courses.length; i++) {
+                if (courses[i].courseId == id) {
                     resolve(courses[i]);
                 }
             }
-        }else{
+        }
+
+        if (courses.length == 0) {
             reject("query returned 0 results");
             return;
         }
@@ -93,12 +105,15 @@ module.exports.getStudentsByCourse = function (course) {
                     studentsList.push(students[i]);
                 }
             }
-            resolve(studentsList);
-        } else {
+        }
+
+        if (studentsList.length == 0) {
             reject("no results returned");
             return;
         }
-    })
+
+        resolve(studentsList);
+    });
 }
 
 // provide a single "student" object matches student number
@@ -106,7 +121,9 @@ module.exports.getStudentByNum = function (num) {
     return new Promise((resolve, reject) => {
         if (students.length > 0) {
             resolve(students[num - 1]);
-        } else {
+        }
+
+        if (students.length == 0) {
             reject("no result returned");
             return;
         }
@@ -130,10 +147,10 @@ module.exports.addStudent = function (studentData) {
 }
 
 // update student
-module.exports.updateStudent= function(studentData){
-    return new Promise((resolve,reject)=>{
-        for(let i=0; i<students.length; i++){
-            if(studentData.studentNum == students[i].studentNum){
+module.exports.updateStudent = function (studentData) {
+    return new Promise((resolve, reject) => {
+        for (let i = 0; i < students.length; i++) {
+            if (studentData.studentNum == students[i].studentNum) {
                 students[i] = studentData;
                 students[i].TA = (studentData.TA) ? true : false;
             }

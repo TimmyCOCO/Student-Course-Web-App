@@ -4,7 +4,7 @@
 * of this assignment has been copied manually or electronically from any other source
 * (including 3rd party web sites) or distributed to other students.
 *
-* Name: Ziming Tan   Student ID: 106915218  Date: 2021-11-08
+* Name: Ziming Tan   Student ID: 106915218  Date: 2021-11-16
 *
 * Online (Heroku) Link: https://limitless-stream-49000.herokuapp.com/
 *
@@ -68,13 +68,14 @@ app.get('/students', (req, res) => {
                 students: data
             });
 
-        }).catch(err => {
+        }).catch(() => {
             // res.status(500).json({ message: "no results" });
             res.render("students", {
                 message: "no results"
             });
 
         });
+    
     } else { // if don't have paramter, then Get all students
         collegeData.getAllStudents().then(data => {
             // res.json(data);    
@@ -129,8 +130,8 @@ app.get('/course/:id', (req, res) => {
         res.render("course", {
             course: data
         });
-    }).catch(err =>{
-        
+    }).catch(err => {
+
     })
 })
 
