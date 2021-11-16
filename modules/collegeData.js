@@ -80,15 +80,13 @@ module.exports.getCourses = function () {
 // provide the "course" objects matches course id
 module.exports.getCourseById = function (id) {
     return new Promise((resolve, reject) => {
-        if (courses.length > 0) {
-            for (let i = 0; i < courses.length; i++) {
-                if (courses[i].courseId == id) {
-                    resolve(courses[i]);
-                }
+        for (let i = 0; i < courses.length; i++) {
+            if (courses[i].courseId == id) {
+                resolve(courses[i]);
             }
         }
-
-        if (courses.length == 0) {
+        
+        if (!courses[i]) {
             reject("query returned 0 results");
             return;
         }
