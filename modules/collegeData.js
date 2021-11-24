@@ -1,26 +1,9 @@
-const fs = require('fs');
 
 // Initialize function
 module.exports.initialize = function () {
-    return new Promise((resolve, reject) => {
-        // for students
-        fs.readFile('./data/students.json', 'utf8', (err, studentsData) => {
-            if (err) {
-                reject('unable to read students.json');
-                return;
-            }
-            students = JSON.parse(studentsData);
-
-            // for courses
-            fs.readFile('./data/courses.json', 'utf8', (err, coursesData) => {
-                if (err) {
-                    reject('unable to read courses.json');
-                    return;
-                } else {
-                    courses = JSON.parse(coursesData);
-                    resolve();
-                }
-            });
+    return new Promise(function (resolve, reject) {
+        reject();
+    });
         });
     });
 }
