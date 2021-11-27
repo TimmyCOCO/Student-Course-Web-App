@@ -146,8 +146,6 @@ module.exports.addStudent = function (studentData) {
         if(studentData[prop] == ''){
             studentData[prop] = null;
         }
-        // console.log(`studentData.${prop} = ${studentData[prop]}`);
-        console.log(studentData.prop + '=' + studentData[prop]);
     }
     studentData.TA = (studentData.TA) ? true : false;
 
