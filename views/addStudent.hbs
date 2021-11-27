@@ -1,7 +1,7 @@
 <div class="row">
     <main class="col-md-12">
 
-        <form action="/processForm" method="post">
+        <form action="/students/add" method="post">
             <fieldset>
                 <legend>Personal Information</legend>
                 <div class="row">
@@ -74,8 +74,8 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="course">Enrolled in Course:</label>
-                            <select class="form-control" name="course" id="course">
-                                <option value="1">Relational Database Design and Implementation</option>
+
+                            {{!-- <option value="1">Relational Database Design and Implementation</option>
                                 <option value="2">Java Programming</option>
                                 <option value="3">Introduction to Cloud Computing</option>
                                 <option value="4">Database Administration and Management</option>
@@ -86,8 +86,18 @@
                                 <option value="9">Datawarehousing</option>
                                 <option value="10">Security in Databases and Web Applications</option>
                                 <option value="11">Work Term Preparation (Work-Integrated Learning option only)
-                                </option>
+                                </option> --}}
+                            {{#if courses}}
+                            <select class="form-control" name="course" id="course">
+                                <option value="">Select Course</option>
+                                {{#each courses}}
+                                <option value="{{courseId}}">{{courseCode}}</option>
+                                {{/each}}
                             </select>
+                            {{else}}
+                            <div>No Courses</div>
+                            {{/if}}
+
                         </div>
                     </div>
                 </div>

@@ -2,7 +2,10 @@
     <div class="col-md-12">
         <br>
 
-        <h2>Students</h2>
+        <h2>Students
+            <a href="/students/add" class="btn btn-success float-right">Add New Student</a>
+        </h2>
+        
         <hr />
 
 
@@ -28,6 +31,7 @@
                         <td>{{this.addressStreet}} {{this.addressCity}} {{this.addressProvince}}</td>
                         <td>{{this.status}}</td>
                         <td><a href="/students?course={{this.course}}">{{this.course}}</a></td>
+                        <td><a class='btn btn-danger' href='/student/delete/{{this.studentNum}}'>remove</a></td>
                     </tr>
                     {{/each}}
 
