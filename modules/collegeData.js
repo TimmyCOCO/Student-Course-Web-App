@@ -55,7 +55,9 @@ module.exports.initialize = function () {
 // get all students
 module.exports.getAllStudents = function () {
     return new Promise(function (resolve, reject) {
-        Student.findAll().then(allStudent => {
+        Student.findAll({
+            order: ['studentNum']
+        }).then(allStudent => {
             resolve(allStudent);
         }).catch(() => {
             reject('no results returned');
