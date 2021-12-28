@@ -17,7 +17,6 @@
                 <tbody>
                     {{#each courses}}
                     <tr>
-                        <td>{{this.courseId}}</td>
                         <td><a href="/course/{{this.courseId}}">{{this.courseCode}}</a></td>
                         <td><a href="/students?course={{this.courseId}}">{{this.courseDescription}}</a></td>
                         <td><a class="btn btn-danger" href='/course/delete/{{this.courseId}}'>remove</a></td>
