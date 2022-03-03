@@ -12,6 +12,9 @@ The web application uses **NodeJS-Express + Handlebars** to develop. It allows t
 3. A directory called **node_modules** will be installed in the project directory.
 
 
+## The web deployed on Heroku:
+Link: https://itworks2021.herokuapp.com/
+
 ## Additional Resources : 
 
 About how to install and use Express:
@@ -21,5 +24,4 @@ About how to install and use Handlebars:
 https://www.npmjs.com/package/handlebars
 
 
-The web deployed on Heroku:
-Link: https://itworks2021.herokuapp.com/
+
