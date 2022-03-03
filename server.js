@@ -1,13 +1,7 @@
 /*********************************************************************************
-* WEB700 – Assignment 06
-* I declare that this assignment is my own work in accordance with Seneca Academic Policy. No part
-* of this assignment has been copied manually or electronically from any other source
-* (including 3rd party web sites) or distributed to other students.
-*
-* Name: Ziming Tan   Student ID: 106915218  Date: 2021-11-27
-*
-* Online (Heroku) Link: https://limitless-stream-49000.herokuapp.com/
-*
+* 
+* Heroku Link: https://itworks2021.herokuapp.com/
+
 ********************************************************************************/
 
 const express = require('express');
