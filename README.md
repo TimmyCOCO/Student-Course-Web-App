@@ -4,16 +4,13 @@ The web application uses **NodeJS-Express + Handlebars** to develop. It allows t
 
 
 ## Following the steps:
-1. Use the command in the project directory: **npm init**  
+1. Use `npm  install` in the project directory, the NPM will install all following items for you.
 
-2. Install the following items: 
-**npm i express express-handlebars sequelize**
-
-3. A directory called **node_modules** will be installed in the project directory.
+2. Then run `node server.js` in the project directory
 
 
 ## The web deployed on Heroku:
-Link: https://itworks2021.herokuapp.com/
+Link: https://student-course-mgm.herokuapp.com/
 
 ## Additional Resources : 
 
